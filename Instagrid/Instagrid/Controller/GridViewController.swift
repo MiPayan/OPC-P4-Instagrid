@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GridViewController.swift
 //  Instagrid
 //
 //  Created by Mickael PAYAN on 15/01/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class GridViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     /// The grid with the different views, and the gesture recognizer to swipe up to share.
@@ -32,6 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak private var thirdButtonIsSelectedImageView: UIImageView!
     
     private var buttonSelected: UIButton?
+    private var imageSelectedView: UIImageView?
     private var phoneOrientation: UIDeviceOrientation {
         get {
             return UIDevice.current.orientation
@@ -52,42 +53,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBAction private func changeAppareanceGridView(_ sender: UIButton) {
+        displayTheSelectedButton()
+        topLeftButton.isHidden = false
+        topRightButton.isHidden = false
+        bottomLeftButton.isHidden = false
+        bottomRightButton.isHidden = false
         switch sender {
         case firstButton:
-            displayTheSelectedButton()
-            topLeftButton.isHidden = false
             topRightButton.isHidden = true
-            bottomLeftButton.isHidden = false
-            bottomRightButton.isHidden = false
         case secondButton:
-            displayTheSelectedButton()
-            topLeftButton.isHidden = false
-            topRightButton.isHidden = false
-            bottomLeftButton.isHidden = false
             bottomRightButton.isHidden = true
-        case thirdButton:
-            displayTheSelectedButton()
-            topLeftButton.isHidden = false
-            topRightButton.isHidden = false
-            bottomLeftButton.isHidden = false
-            bottomRightButton.isHidden = false
         default:
             break
         }
     }
     
     private func displayTheSelectedButton() {
+        firstButtonIsSelectedImageView.isHidden = true
+        secondButtonIsSelectedImageView.isHidden = true
+        thirdButtonIsSelectedImageView.isHidden = true
         if firstButton.isTouchInside {
             firstButtonIsSelectedImageView.isHidden = false
-            secondButtonIsSelectedImageView.isHidden = true
-            thirdButtonIsSelectedImageView.isHidden = true
         } else if secondButton.isTouchInside {
-            firstButtonIsSelectedImageView.isHidden = true
             secondButtonIsSelectedImageView.isHidden = false
-            thirdButtonIsSelectedImageView.isHidden = true
         } else if thirdButton.isTouchInside {
-            firstButtonIsSelectedImageView.isHidden = true
-            secondButtonIsSelectedImageView.isHidden = true
             thirdButtonIsSelectedImageView.isHidden = false
         }
     }
@@ -111,13 +100,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         switch sender.direction {
         case .up:
             self.animatedGridView(x: 0, y: -1000)
-            shareCompleteGridView()
         case .left:
             self.animatedGridView(x: -1000, y: 0)
-            shareCompleteGridView()
         default:
             break
         }
+        shareCompleteGridView()
     }
     
     private func animatedGridView(x: CGFloat, y: CGFloat) {
@@ -132,7 +120,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
     
-    private func viewToImage(with view: UIView) -> UIImage {
+    private func viewToImage(with view: UIView) -> UIImage   {
         let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
         let image = renderer.image { _ in
            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
