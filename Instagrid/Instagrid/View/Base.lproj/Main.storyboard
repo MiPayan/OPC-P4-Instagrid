@@ -32,6 +32,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="EK0-24-qMv">
+                                <rect key="frame" x="96" y="86" width="128" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ud7-06-JFx">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tgM-eq-I5Y">
+                                        <rect key="frame" x="0.0" y="21" width="128" height="36"/>
+                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3f1-oe-w4h">
                                 <rect key="frame" x="35" y="159" width="250" height="250"/>
                                 <subviews>
@@ -112,30 +136,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="EK0-24-qMv">
-                                <rect key="frame" x="96" y="86" width="128" height="57"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ud7-06-JFx">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tgM-eq-I5Y">
-                                        <rect key="frame" x="0.0" y="21" width="128" height="36"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="3Kp-uh-96c">
                                 <rect key="frame" x="25" y="476" width="270" height="72"/>
                                 <subviews>
@@ -360,19 +360,19 @@
                     </view>
                     <connections>
                         <outlet property="arrowSwipeToShareLabel" destination="ud7-06-JFx" id="FhA-6X-9Td"/>
-                        <outlet property="bottomLeftButton" destination="jcs-bH-zcI" id="Iqi-zM-mVJ"/>
-                        <outlet property="bottomRightButton" destination="qSC-3y-g15" id="Mfm-by-2Vb"/>
-                        <outlet property="firstButton" destination="P9h-Rc-eO2" id="sUL-30-dHm"/>
-                        <outlet property="firstButtonIsSelectedImageView" destination="2kI-Nl-J8U" id="oQK-FL-l0B"/>
                         <outlet property="gridView" destination="3f1-oe-w4h" id="rjK-VZ-rwZ"/>
-                        <outlet property="secondButton" destination="jc3-zh-LAA" id="VAi-kN-0b9"/>
-                        <outlet property="secondButtonIsSelectedImageView" destination="oDv-Pn-TqL" id="HZp-II-yGz"/>
                         <outlet property="swipeGesture" destination="jQO-78-7Fm" id="6ss-4U-hL1"/>
                         <outlet property="swipeToShareLabel" destination="tgM-eq-I5Y" id="PuU-qy-lyK"/>
-                        <outlet property="thirdButton" destination="Ujl-t8-CcU" id="Nzc-Y4-EDh"/>
-                        <outlet property="thirdButtonIsSelectedImageView" destination="ezm-t4-pJD" id="Qgp-k4-TEa"/>
-                        <outlet property="topLeftButton" destination="bkf-UJ-uKC" id="FH1-sw-HQt"/>
-                        <outlet property="topRightButton" destination="l5q-aE-cgn" id="BoV-Xn-bLL"/>
+                        <outletCollection property="gridViewButtons" destination="bkf-UJ-uKC" collectionClass="NSMutableArray" id="Bfx-8J-mRs"/>
+                        <outletCollection property="gridViewButtons" destination="l5q-aE-cgn" collectionClass="NSMutableArray" id="4cZ-wj-fnx"/>
+                        <outletCollection property="gridViewButtons" destination="jcs-bH-zcI" collectionClass="NSMutableArray" id="57d-C7-l69"/>
+                        <outletCollection property="gridViewButtons" destination="qSC-3y-g15" collectionClass="NSMutableArray" id="HfY-um-ydp"/>
+                        <outletCollection property="updateGridButtons" destination="P9h-Rc-eO2" collectionClass="NSMutableArray" id="nw1-KO-Rnk"/>
+                        <outletCollection property="updateGridButtons" destination="jc3-zh-LAA" collectionClass="NSMutableArray" id="fQ1-Fd-YVx"/>
+                        <outletCollection property="updateGridButtons" destination="Ujl-t8-CcU" collectionClass="NSMutableArray" id="iq2-hD-3OJ"/>
+                        <outletCollection property="updateGridButtonIsSelectedImageView" destination="2kI-Nl-J8U" collectionClass="NSMutableArray" id="rlU-S2-ys0"/>
+                        <outletCollection property="updateGridButtonIsSelectedImageView" destination="oDv-Pn-TqL" collectionClass="NSMutableArray" id="qJa-Ne-NP4"/>
+                        <outletCollection property="updateGridButtonIsSelectedImageView" destination="ezm-t4-pJD" collectionClass="NSMutableArray" id="VH9-2R-2ZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
