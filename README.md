@@ -46,6 +46,9 @@ By tapping a plus button, the user has access to his photo library and can choos
 <br />
 
 The photo must be centered, without being altered (the proportions are maintained) and take as much space as possible (no “white”). If the user clicks on a photo in the grid, he can choose a new image in the photo library to replace it.
+<br />
+<br />
+<br />
 
 <b>III. Swipe to share</b>
 
