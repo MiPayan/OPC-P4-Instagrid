@@ -1,0 +1,44 @@
+disabled_rules:
+    trailing_whitespace
+
+opt_in_rules:
+    empty_count
+    empty_string
+
+excluded:
+    Carthage
+    Pods
+    
+vertical_whitespace:
+    warning
+    max_empty_lines: 1
+    
+line_length:
+    warning: 120
+    error: 200
+    ignores_urls: true
+    ignores_function_declarations: true
+    ignores_comments: true
+    ignores_interpolated strings: true
+    
+trailing_whitespace:
+    warning
+    ignores_empty_lines: false
+    ignores_comments: true
+    
+colon:
+    warning, flexible_right_spacing: false
+    apply_to_dictionaries: true
+
+identifier_name:
+    w/e: 3/2
+    w/e: 40/60
+    excluded: []
+    allowed_symbols: []
+    validates_start_with_lowercase: true
+
+unused_optional_binding:
+    warning
+    ignore_optional_try: false
+
+reporter: "xcode"

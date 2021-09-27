@@ -8,12 +8,12 @@
 import UIKit
 
 class GridViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+//    swiftlint:disable trailing_whitespace
+//    swiftlint:disable line_length
     
     /// The grid with the different views.
     @IBOutlet weak private var gridView: UIView!
     @IBOutlet weak private var swipeGesture: UISwipeGestureRecognizer!
-
     @IBOutlet weak private var arrowSwipeToShareLabel: UILabel!
     @IBOutlet weak private var swipeToShareLabel: UILabel!
     
@@ -23,7 +23,6 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     /// The three buttons to change the selection appearance of the "GridView". First button on the left = updateGridButtons[0], second button in the middle = updateGridButtons[1] and the third on the right = updateGridButtons[2]. The same positions for the property updateGridButtonIsSelectedImageView.
     @IBOutlet var updateGridButtons: [UIButton]!
     @IBOutlet var updateGridButtonIsSelectedImageView: [UIImageView]!
-    
     private var buttonSelected: UIButton?
     private var phoneOrientation: UIDeviceOrientation {
         get {
@@ -42,7 +41,6 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             swipeGesture.direction = .left
         }
     }
-    
     
     @IBAction private func changeAppareanceGridView(_ sender: UIButton) {
         displayTheSelectedButton()
@@ -73,10 +71,11 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
-        picker.sourceType = .photoLibrary;
+        picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
     
+    //  swiftlint:disable:next colon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.buttonSelected?.setImage(image, for: .normal)
@@ -98,7 +97,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.present(alert, animated: true)
     }
     
-    @IBAction private func swipeUpAction(_ sender: UISwipeGestureRecognizer) {
+    @IBAction private func swipeAction(_ sender: UISwipeGestureRecognizer) {
         guard checkIfTheGridViewIsComplete() else { return }
         switch sender.direction {
         case .up:
@@ -111,13 +110,14 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         shareCompleteGridView()
     }
     
+    //  swiftlint:disable:next identifier_name
     private func animatedGridView(x: CGFloat, y: CGFloat) {
         UIView.animate(withDuration: 0.6, animations: {
             self.gridView.transform = CGAffineTransform(translationX: x, y: y)
         })
     }
     
-    private func viewToImage(with view: UIView) -> UIImage   {
+    private func viewToImage(with view: UIView) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
         let image = renderer.image { _ in
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
