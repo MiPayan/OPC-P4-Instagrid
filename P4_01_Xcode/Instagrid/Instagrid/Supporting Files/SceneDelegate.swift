@@ -4,6 +4,8 @@
 //
 //  Created by Mickael PAYAN on 15/01/2021.
 //
+//    swiftlint:disable line_length
+//    swiftlint:disable unused_optional_binding
 
 import UIKit
 
@@ -11,8 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-//    swiftlint:disable line_length
-//    swiftlint:disable unused_optional_binding
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.

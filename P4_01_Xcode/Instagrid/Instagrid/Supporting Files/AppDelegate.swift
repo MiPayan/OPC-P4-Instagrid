@@ -4,12 +4,12 @@
 //
 //  Created by Mickael PAYAN on 15/01/2021.
 //
+//  swiftlint:disable line_length
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//  swiftlint:disable line_length
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
